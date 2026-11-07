@@ -79,6 +79,205 @@
       transform: scale(.8);
       transform-origin: left top;
     }
+    .fan-backdrop {
+      position: absolute;
+      left: 4px;
+      top: 82px;
+      width: 455px;
+      height: 310px;
+      overflow: hidden;
+      border-radius: 40px;
+      background:
+        radial-gradient(220px 230px at 14% 18%, rgba(239, 45, 223, .74), transparent 72%),
+        radial-gradient(240px 220px at 88% 80%, rgba(48, 85, 226, .72), transparent 70%),
+        linear-gradient(140deg, #32115f 0%, #5f167e 46%, #171c56 100%);
+      box-shadow: 0 22px 42px rgba(49, 25, 99, .21);
+    }
+    .fan-backdrop::before {
+      content: "";
+      position: absolute;
+      inset: -80px -120px;
+      background: linear-gradient(118deg, transparent 34%, rgba(255,255,255,.13) 48%, transparent 60%);
+      transform: rotate(-8deg);
+    }
+    .fan-backdrop::after {
+      content: "";
+      position: absolute;
+      left: 36px;
+      right: 36px;
+      bottom: 24px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(5, 7, 34, .42);
+      filter: blur(15px);
+    }
+    .card-fan {
+      position: absolute;
+      inset: 0;
+    }
+    .credit-card {
+      --x: 0px;
+      --y: 0px;
+      --r: 0deg;
+      position: absolute;
+      left: 150px;
+      top: 87px;
+      width: 165px;
+      height: 255px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.23);
+      border-radius: 19px;
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(10, 8, 43, .34);
+      transform: translate(var(--x), var(--y)) rotate(var(--r));
+      transform-origin: 50% 93%;
+    }
+    .credit-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(125deg, rgba(255,255,255,.20), transparent 35%, transparent 70%, rgba(255,255,255,.07));
+    }
+    .credit-card .brand {
+      position: absolute;
+      z-index: 2;
+      top: 46px;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      text-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .credit-card .brand small {
+      display: block;
+      margin-top: 7px;
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 0;
+      opacity: .78;
+    }
+    .credit-card .chip {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      bottom: 29px;
+      width: 37px;
+      height: 29px;
+      border-radius: 7px;
+      background: linear-gradient(145deg, #fffce8, #c8cfca);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.65);
+    }
+    .credit-card .chip::before,
+    .credit-card .chip::after {
+      content: "";
+      position: absolute;
+      background: rgba(127, 140, 145, .34);
+    }
+    .credit-card .chip::before { left: 17px; top: 0; width: 2px; height: 29px; }
+    .credit-card .chip::after { left: 0; top: 13px; width: 37px; height: 2px; }
+    .credit-card .contactless {
+      position: absolute;
+      z-index: 2;
+      left: 66px;
+      bottom: 32px;
+      width: 23px;
+      height: 23px;
+      border: 3px solid transparent;
+      border-left-color: rgba(255,255,255,.88);
+      border-radius: 50%;
+      transform: rotate(8deg);
+    }
+    .credit-card .contactless::before,
+    .credit-card .contactless::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      border: 2px solid transparent;
+      border-left-color: rgba(255,255,255,.88);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .credit-card .contactless::before { left: 2px; width: 11px; height: 14px; }
+    .credit-card .contactless::after { left: 7px; width: 5px; height: 7px; }
+
+    .bajet-card {
+      --x: -128px; --y: 12px; --r: -25deg;
+      z-index: 1;
+      background:
+        radial-gradient(130px 120px at 5% 4%, rgba(198, 232, 0, .92), transparent 70%),
+        linear-gradient(160deg, #0c8e82, #08486c 58%, #102b55);
+    }
+    .bajet-card .brand img { width: 78px; height: 76px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0,0,0,.15)); }
+    .kalapay-card {
+      --x: -66px; --y: -4px; --r: -13deg;
+      z-index: 2;
+      background:
+        linear-gradient(133deg, transparent 0 54%, rgba(255, 197, 34, .94) 55% 62%, transparent 63%),
+        linear-gradient(155deg, #1677bd, #064d8d 55%, #07356c);
+    }
+    .kalapay-card::before {
+      content: "";
+      position: absolute;
+      right: -24px;
+      top: -24px;
+      width: 92px;
+      height: 92px;
+      border: 13px solid rgba(255, 207, 56, .34);
+      border-radius: 50%;
+    }
+    .digipay-card {
+      z-index: 5;
+      background:
+        linear-gradient(135deg, transparent 42%, rgba(97, 158, 255, .23) 43% 57%, transparent 58%),
+        linear-gradient(155deg, #3157fb, #0037ff 56%, #112e9d);
+    }
+    .digipay-card .brand {
+      top: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      font-size: 18px;
+    }
+    .digipay-card .brand img { width: 52px; height: 52px; border-radius: 13px; }
+    .kalano-card {
+      --x: 66px; --y: -4px; --r: 13deg;
+      z-index: 4;
+      background:
+        radial-gradient(120px 150px at 102% 2%, rgba(35, 235, 202, .76), transparent 68%),
+        linear-gradient(160deg, #137b87, #12436e 56%, #192756);
+    }
+    .kalano-card::before {
+      content: "";
+      position: absolute;
+      left: -37px;
+      bottom: 52px;
+      width: 112px;
+      height: 112px;
+      border: 18px solid rgba(93, 235, 208, .18);
+      border-radius: 50%;
+    }
+    .nopay-card {
+      --x: 128px; --y: 12px; --r: 25deg;
+      z-index: 3;
+      background:
+        radial-gradient(130px 140px at 100% 0%, rgba(255, 80, 206, .86), transparent 66%),
+        linear-gradient(155deg, #a019b2, #61147d 56%, #351362);
+    }
+    .nopay-card::before {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 18px;
+      width: 32px;
+      height: 32px;
+      border: 8px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+    }
     .orbit {
       position: absolute;
       left: 26px;
@@ -304,31 +503,28 @@
 
     <div class="safe-area">
       <section class="visual" aria-hidden="true">
-        <div class="orbit"></div>
-        <div class="ring"></div>
-
-        <div class="main-icon">
-          <svg viewBox="0 0 160 160" fill="none">
-            <path d="M24 34h14l11 65h65l13-46H48" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="62" cy="120" r="8" fill="#fff"/>
-            <circle cx="111" cy="120" r="8" fill="#fff"/>
-            <rect x="86" y="22" width="52" height="46" rx="11" fill="#fff"/>
-            <path d="M87 39h50" stroke="#2678ef" stroke-width="5"/>
-            <rect x="96" y="47" width="10" height="7" rx="2" fill="#2678ef"/>
-            <rect x="113" y="47" width="10" height="7" rx="2" fill="#2678ef"/>
-            <rect x="96" y="58" width="10" height="7" rx="2" fill="#2678ef"/>
-            <rect x="113" y="58" width="10" height="7" rx="2" fill="#2678ef"/>
-          </svg>
-        </div>
-
-        <div class="logo-bubble bajet">
-          <img src="logos/bajet-pay.webp" alt="">
-        </div>
-        <div class="logo-bubble diba">
-          <img src="logos/diba-card.webp" alt="">
-        </div>
-        <div class="logo-bubble digipay">
-          <img src="logos/digipay.svg" alt="">
+        <div class="fan-backdrop"></div>
+        <div class="card-fan">
+          <div class="credit-card bajet-card">
+            <div class="brand"><img src="logos/bajet-pay.webp" alt=""></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card kalapay-card">
+            <div class="brand">کالاپی<small>بانک ملی ایران</small></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card digipay-card">
+            <div class="brand"><img src="logos/digipay.svg" alt=""><span>دیجی‌پی</span></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card kalano-card">
+            <div class="brand">کالانو<small>بانک تجارت</small></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card nopay-card">
+            <div class="brand">نوپی<small>الان بخر، بعداً پرداخت کن</small></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
         </div>
       </section>
 
@@ -340,7 +536,7 @@
         </h1>
         <p class="description">از دریافت اعتبار تا ثبت سفارش و پرداخت اقساط؛ همه مراحل را ساده و قدم‌به‌قدم ببینید.</p>
         <div class="provider-line">
-          <span>باجت‌پی</span><i></i><span>دیجی‌پی</span><i></i><span>دیبا کارت</span>
+          <span>باجت‌پی</span><i></i><span>کالاپی</span><i></i><span>دیجی‌پی</span><i></i><span>کالانو</span><i></i><span>نوپی</span>
         </div>
       </section>
     </div>
