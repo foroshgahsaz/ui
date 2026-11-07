@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>راهنمای خرید اقساطی از چینی‌بازار</title>
+  <style>
+    @font-face {
+      font-family: Vazirmatn;
+      src: url("fonts/Vazirmatn-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-display: block;
+    }
+    @font-face {
+      font-family: Vazirmatn;
+      src: url("fonts/Vazirmatn-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+      font-display: block;
+    }
+    @font-face {
+      font-family: Vazirmatn;
+      src: url("fonts/Vazirmatn-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-display: block;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      width: 1920px;
+      height: 400px;
+      margin: 0;
+      overflow: hidden;
+    }
+    body {
+      font-family: Vazirmatn, sans-serif;
+      background: #f7faff;
+      color: #181d2a;
+      -webkit-font-smoothing: antialiased;
+    }
+    .banner {
+      position: relative;
+      width: 1920px;
+      height: 400px;
+      isolation: isolate;
+      overflow: hidden;
+      border-radius: 20px;
+      background: linear-gradient(115deg, #24194d, #46318b 60%, #7553dd);
+    }
+    .hex-pattern {
+      position: absolute;
+      inset: -90px -20px -80px 620px;
+      z-index: -2;
+      opacity: 0.11;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='126' height='110' viewBox='0 0 126 110'%3E%3Cpath d='M31 3h32l16 27.5L63 58H31L15 30.5 31 3Zm63 0h32l16 27.5L126 58H94L78 30.5 94 3ZM0 58h31l16 27.5L31 113H0l-16-27.5L0 58Zm63 0h32l16 27.5L95 113H63L47 85.5 63 58Z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3C/svg%3E");
+    }
+    .wash {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(500px 360px at 18% 8%, rgba(147, 103, 255, .20), transparent 72%),
+        radial-gradient(560px 340px at 84% 110%, rgba(196, 108, 255, .18), transparent 72%),
+        linear-gradient(90deg, rgba(8, 5, 31, .12), transparent 52%, rgba(255,255,255,.035));
+    }
+    .wash::before,
+    .wash::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .wash::before {
+      left: 90px;
+      top: -390px;
+      width: 650px;
+      height: 650px;
+      border: 74px solid rgba(255,255,255,.035);
+      box-shadow:
+        0 0 0 62px rgba(255,255,255,.022),
+        0 0 0 135px rgba(255,255,255,.014);
+    }
+    .wash::after {
+      right: -160px;
+      bottom: -310px;
+      width: 480px;
+      height: 480px;
+      border: 58px solid rgba(255,255,255,.025);
+    }
+
+    /* All essential information stays inside x=448…1472, the safe center
+       when the 1920px artwork is center-cropped down to 1024px. */
+    .safe-area {
+      position: absolute;
+      left: 448px;
+      top: 0;
+      width: 1024px;
+      height: 400px;
+    }
+    .visual {
+      position: absolute;
+      left: 30px;
+      top: 0;
+      width: 465px;
+      height: 500px;
+      transform: scale(.8);
+      transform-origin: left top;
+    }
+    .fan-backdrop {
+      position: absolute;
+      left: 4px;
+      top: 82px;
+      width: 455px;
+      height: 310px;
+      overflow: hidden;
+      border-radius: 40px;
+      background:
+        radial-gradient(220px 230px at 14% 18%, rgba(239, 45, 223, .74), transparent 72%),
+        radial-gradient(240px 220px at 88% 80%, rgba(48, 85, 226, .72), transparent 70%),
+        linear-gradient(140deg, #32115f 0%, #5f167e 46%, #171c56 100%);
+      box-shadow: 0 22px 42px rgba(49, 25, 99, .21);
+    }
+    .fan-backdrop::before {
+      content: "";
+      position: absolute;
+      inset: -80px -120px;
+      background: linear-gradient(118deg, transparent 34%, rgba(255,255,255,.13) 48%, transparent 60%);
+      transform: rotate(-8deg);
+    }
+    .fan-backdrop::after {
+      content: "";
+      position: absolute;
+      left: 36px;
+      right: 36px;
+      bottom: 24px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(5, 7, 34, .42);
+      filter: blur(15px);
+    }
+    .card-fan {
+      position: absolute;
+      inset: 0;
+    }
+    .credit-card {
+      --x: 0px;
+      --y: 0px;
+      --r: 0deg;
+      position: absolute;
+      left: 150px;
+      top: 87px;
+      width: 165px;
+      height: 255px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.23);
+      border-radius: 19px;
+      color: #fff;
+      box-shadow: 0 16px 30px rgba(10, 8, 43, .34);
+      transform: translate(var(--x), var(--y)) rotate(var(--r));
+      transform-origin: 50% 93%;
+    }
+    .credit-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(125deg, rgba(255,255,255,.20), transparent 35%, transparent 70%, rgba(255,255,255,.07));
+    }
+    .credit-card .brand {
+      position: absolute;
+      z-index: 2;
+      top: 46px;
+      left: 15px;
+      right: 15px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      text-shadow: 0 2px 8px rgba(0,0,0,.15);
+    }
+    .credit-card .brand small {
+      display: block;
+      margin-top: 7px;
+      font-size: 8px;
+      font-weight: 500;
+      letter-spacing: 0;
+      opacity: .78;
+    }
+    .credit-card .chip {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      bottom: 29px;
+      width: 37px;
+      height: 29px;
+      border-radius: 7px;
+      background: linear-gradient(145deg, #fffce8, #c8cfca);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.65);
+    }
+    .credit-card .chip::before,
+    .credit-card .chip::after {
+      content: "";
+      position: absolute;
+      background: rgba(127, 140, 145, .34);
+    }
+    .credit-card .chip::before { left: 17px; top: 0; width: 2px; height: 29px; }
+    .credit-card .chip::after { left: 0; top: 13px; width: 37px; height: 2px; }
+    .credit-card .contactless {
+      position: absolute;
+      z-index: 2;
+      left: 66px;
+      bottom: 32px;
+      width: 23px;
+      height: 23px;
+      border: 3px solid transparent;
+      border-left-color: rgba(255,255,255,.88);
+      border-radius: 50%;
+      transform: rotate(8deg);
+    }
+    .credit-card .contactless::before,
+    .credit-card .contactless::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      border: 2px solid transparent;
+      border-left-color: rgba(255,255,255,.88);
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+    .credit-card .contactless::before { left: 2px; width: 11px; height: 14px; }
+    .credit-card .contactless::after { left: 7px; width: 5px; height: 7px; }
+
+    .bajet-card {
+      --x: -128px; --y: 12px; --r: -25deg;
+      z-index: 1;
+      background:
+        radial-gradient(130px 120px at 5% 4%, rgba(198, 232, 0, .92), transparent 70%),
+        linear-gradient(160deg, #0c8e82, #08486c 58%, #102b55);
+    }
+    .bajet-card .brand img { width: 78px; height: 76px; object-fit: contain; filter: drop-shadow(0 3px 5px rgba(0,0,0,.15)); }
+    .kalapay-card {
+      --x: -66px; --y: -4px; --r: -13deg;
+      z-index: 2;
+      background:
+        linear-gradient(133deg, transparent 0 54%, rgba(255, 197, 34, .94) 55% 62%, transparent 63%),
+        linear-gradient(155deg, #1677bd, #064d8d 55%, #07356c);
+    }
+    .kalapay-card::before {
+      content: "";
+      position: absolute;
+      right: -24px;
+      top: -24px;
+      width: 92px;
+      height: 92px;
+      border: 13px solid rgba(255, 207, 56, .34);
+      border-radius: 50%;
+    }
+    .digipay-card {
+      --x: 66px; --y: -4px; --r: 13deg;
+      z-index: 4;
+      background:
+        linear-gradient(135deg, transparent 42%, rgba(97, 158, 255, .23) 43% 57%, transparent 58%),
+        linear-gradient(155deg, #3157fb, #0037ff 56%, #112e9d);
+    }
+    .digipay-card .brand {
+      top: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      font-size: 18px;
+    }
+    .digipay-card .brand img { width: 52px; height: 52px; border-radius: 13px; }
+    .kalano-card {
+      z-index: 5;
+      background:
+        radial-gradient(120px 150px at 102% 2%, rgba(35, 235, 202, .76), transparent 68%),
+        linear-gradient(160deg, #137b87, #12436e 56%, #192756);
+    }
+    .kalano-card::before {
+      content: "";
+      position: absolute;
+      left: -37px;
+      bottom: 52px;
+      width: 112px;
+      height: 112px;
+      border: 18px solid rgba(93, 235, 208, .18);
+      border-radius: 50%;
+    }
+    .nopay-card {
+      --x: 128px; --y: 12px; --r: 25deg;
+      z-index: 3;
+      background:
+        radial-gradient(130px 140px at 100% 0%, rgba(255, 80, 206, .86), transparent 66%),
+        linear-gradient(155deg, #a019b2, #61147d 56%, #351362);
+    }
+    .nopay-card::before {
+      content: "";
+      position: absolute;
+      left: 17px;
+      top: 18px;
+      width: 32px;
+      height: 32px;
+      border: 8px solid rgba(255,255,255,.15);
+      border-radius: 50%;
+    }
+    .orbit {
+      position: absolute;
+      left: 26px;
+      top: 42px;
+      width: 388px;
+      height: 388px;
+      border: 3px dashed rgba(39, 123, 237, 0.18);
+      border-radius: 50%;
+    }
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+    .orbit::before {
+      left: 7px;
+      top: 61px;
+      width: 18px;
+      height: 18px;
+      background: #ffb41f;
+    }
+    .orbit::after {
+      right: -2px;
+      bottom: 74px;
+      width: 13px;
+      height: 13px;
+      background: #287cf3;
+    }
+    .ring {
+      position: absolute;
+      left: 54px;
+      bottom: 31px;
+      width: 31px;
+      height: 31px;
+      border: 6px solid rgba(43, 124, 236, 0.42);
+      border-radius: 50%;
+    }
+    .main-icon {
+      position: absolute;
+      left: 98px;
+      top: 128px;
+      width: 238px;
+      height: 238px;
+      border-radius: 58px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #2d86ff 0%, #1f6fea 100%);
+      box-shadow: 0 24px 42px rgba(32, 111, 231, 0.25);
+    }
+    .main-icon svg {
+      width: 143px;
+      height: 143px;
+      overflow: visible;
+    }
+    .logo-bubble {
+      position: absolute;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 16px 30px rgba(33, 66, 114, 0.14);
+    }
+    .logo-bubble img { display: block; object-fit: contain; }
+    .bajet {
+      left: 292px;
+      top: 38px;
+      width: 128px;
+      height: 128px;
+      background: linear-gradient(145deg, #ffbd2a, #ffa713);
+      transform: rotate(7deg);
+    }
+    .bajet img {
+      width: 86px;
+      height: 84px;
+      transform: rotate(-7deg);
+    }
+    .diba {
+      left: 0;
+      top: 304px;
+      width: 122px;
+      height: 122px;
+      background: #fff;
+    }
+    .diba img { width: 96px; height: 44px; }
+    .digipay {
+      left: 320px;
+      top: 341px;
+      width: 105px;
+      height: 105px;
+      background: #fff;
+    }
+    .digipay img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+    }
+
+    .copy {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      width: 545px;
+      text-align: center;
+      transform: translateY(-50%);
+    }
+    .eyebrow {
+      display: inline-flex;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 26px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,.09);
+      color: #e7deff;
+      box-shadow: 0 8px 20px rgba(14, 7, 49, .12);
+      font-size: 18px;
+      font-weight: 600;
+    }
+    h1 {
+      margin: 16px 0 10px;
+      color: #fff;
+      font-size: 43px;
+      line-height: 1.32;
+      letter-spacing: -1.5px;
+      font-weight: 700;
+    }
+    h1 strong {
+      display: block;
+      color: #d7c4ff;
+      font-weight: 700;
+    }
+    .description {
+      margin: 0 auto;
+      max-width: 505px;
+      color: rgba(255,255,255,.72);
+      font-size: 19px;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+    .provider-line {
+      margin-top: 10px;
+      display: flex;
+      direction: rtl;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,.86);
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .provider-line i {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #d7b5ff;
+    }
+    .learn-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 42px;
+      margin-top: 13px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: #fff;
+      color: #4d3693;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 12px 28px rgba(17, 8, 58, .26);
+      text-decoration: none;
+    }
+    .learn-button svg {
+      width: 16px;
+      height: 16px;
+    }
+    .edge-dot {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .72;
+    }
+    .edge-dot.one { left: 238px; top: 100px; width: 13px; height: 13px; background: #ffb51f; }
+    .edge-dot.two { right: 205px; bottom: 56px; width: 9px; height: 9px; background: #2c7df1; }
+
+    /* Dedicated 1080×500 mobile artwork. This is a re-layout, not a scaled
+       desktop banner, so the title remains readable in a narrow carousel. */
+    @media (max-width: 1200px) {
+      html, body,
+      .banner {
+        width: 1080px;
+        height: 500px;
+      }
+      .banner {
+        background: linear-gradient(115deg, #24194d, #46318b 60%, #7553dd);
+      }
+      .hex-pattern { inset: -90px -20px -80px 350px; }
+      .safe-area {
+        left: 0;
+        width: 1080px;
+        height: 500px;
+      }
+      .visual {
+        left: 30px;
+        transform: none;
+      }
+      .copy {
+        right: 20px;
+        width: 570px;
+      }
+      .eyebrow {
+        height: 46px;
+        font-size: 20px;
+      }
+      h1 {
+        margin: 18px 0 12px;
+        font-size: 47px;
+        line-height: 1.34;
+      }
+      .description {
+        max-width: 540px;
+        font-size: 21px;
+        line-height: 1.7;
+      }
+      .provider-line {
+        margin-top: 12px;
+        font-size: 16px;
+      }
+      .learn-button {
+        height: 46px;
+        font-size: 18px;
+      }
+      .edge-dot.one { left: 12px; top: 88px; }
+      .edge-dot.two { right: 18px; bottom: 38px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="banner" aria-label="راهنمای خرید اقساطی از چینی‌بازار">
+    <div class="hex-pattern" aria-hidden="true"></div>
+    <div class="wash" aria-hidden="true"></div>
+    <i class="edge-dot one" aria-hidden="true"></i>
+    <i class="edge-dot two" aria-hidden="true"></i>
+
+    <div class="safe-area">
+      <section class="visual" aria-hidden="true">
+        <div class="card-fan">
+          <div class="credit-card bajet-card">
+            <div class="brand"><img src="logos/bajet-pay.webp" alt=""></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card kalapay-card">
+            <div class="brand">کالاپی<small>بانک ملی ایران</small></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card digipay-card">
+            <div class="brand"><img src="logos/digipay.svg" alt=""><span>دیجی‌پی</span></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card kalano-card">
+            <div class="brand">کالانو<small>بانک تجارت</small></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+          <div class="credit-card nopay-card">
+            <div class="brand">نوپی<small>الان بخر، بعداً پرداخت کن</small></div>
+            <i class="contactless"></i><i class="chip"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="copy">
+        <span class="eyebrow">راهنمای خرید اقساطی</span>
+        <h1>
+          چطوری از چینی‌بازار
+          <strong>قسطی خرید کنیم؟</strong>
+        </h1>
+        <p class="description">از دریافت اعتبار تا ثبت سفارش و پرداخت اقساط؛ همه مراحل را ساده و قدم‌به‌قدم ببینید.</p>
+        <div class="provider-line">
+          <span>باجت‌پی</span><i></i><span>کالاپی</span><i></i><span>دیجی‌پی</span><i></i><span>کالانو</span><i></i><span>نوپی</span>
+        </div>
+        <a class="learn-button" href="#">
+          <span>آموزش خرید</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

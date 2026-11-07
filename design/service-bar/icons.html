@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <title>آیکون‌های میانبر</title>
+  <style>
+    @font-face { font-family: Vazirmatn; src: url("fonts/Vazirmatn-Medium.ttf") format("truetype"); font-weight: 500; font-display: block; }
+    @font-face { font-family: Vazirmatn; src: url("fonts/Vazirmatn-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: block; }
+    @font-face { font-family: Vazirmatn; src: url("fonts/Vazirmatn-Bold.ttf") format("truetype"); font-weight: 700; font-display: block; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      width: 1440px;
+      height: 680px;
+      overflow: hidden;
+      background: #F6F8FA;
+      color: #1C2740;
+      font-family: Vazirmatn, sans-serif;
+    }
+    .board { padding: 36px 40px 0; }
+    h1 { margin: 0; font-size: 28px; font-weight: 700; }
+    p { margin: 8px 0 0; color: #66758A; font-size: 15px; font-weight: 500; }
+    .grid {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 12px;
+    }
+    .cell {
+      width: 208px;
+      background: #fff;
+      border-radius: 18px;
+      height: 228px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(28, 49, 84, 0.04);
+    }
+    .cell img { width: 112px; height: 112px; }
+    .cell span { font-size: 16px; font-weight: 600; color: #243044; }
+  </style>
+</head>
+<body>
+  <div class="board">
+    <h1>آیکون میانبرهای بالای اسلایدر</h1>
+    <p>یک خانواده، یک ضخامت خط، همان رنگ‌های طرح — برای نشستن روی زمینه روشن صفحه</p>
+    <div class="grid">
+      <div class="cell"><img src="icons/store.svg" alt=""/><span>فروشگاه</span></div>
+      <div class="cell"><img src="icons/nearest-store.svg" alt=""/><span>نزدیک‌ترین فروشگاه</span></div>
+      <div class="cell"><img src="icons/agents.svg" alt=""/><span>نمایندگان</span></div>
+      <div class="cell"><img src="icons/agency-request.svg" alt=""/><span>درخواست نمایندگی</span></div>
+      <div class="cell"><img src="icons/facilities.svg" alt=""/><span>تسهیلات</span></div>
+      <div class="cell"><img src="icons/organizations.svg" alt=""/><span>سازمان‌ها</span></div>
+      <div class="cell"><img src="icons/categories.svg" alt=""/><span>دسته‌ها</span></div>
+      <div class="cell"><img src="icons/partners.svg" alt=""/><span>شرکای تجاری</span></div>
+      <div class="cell"><img src="icons/consultation.svg" alt=""/><span>دریافت مشاوره</span></div>
+      <div class="cell"><img src="icons/my-products.svg" alt=""/><span>کالاهای من</span></div>
+      <div class="cell"><img src="icons/after-sales.svg" alt=""/><span>خدمات پس از فروش</span></div>
+    </div>
+  </div>
+</body>
+</html>
