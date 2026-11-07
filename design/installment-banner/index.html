@@ -230,7 +230,8 @@
       border-radius: 50%;
     }
     .digipay-card {
-      z-index: 5;
+      --x: 66px; --y: -4px; --r: 13deg;
+      z-index: 4;
       background:
         linear-gradient(135deg, transparent 42%, rgba(97, 158, 255, .23) 43% 57%, transparent 58%),
         linear-gradient(155deg, #3157fb, #0037ff 56%, #112e9d);
@@ -245,8 +246,7 @@
     }
     .digipay-card .brand img { width: 52px; height: 52px; border-radius: 13px; }
     .kalano-card {
-      --x: 66px; --y: -4px; --r: 13deg;
-      z-index: 4;
+      z-index: 5;
       background:
         radial-gradient(120px 150px at 102% 2%, rgba(35, 235, 202, .76), transparent 68%),
         linear-gradient(160deg, #137b87, #12436e 56%, #192756);
@@ -435,6 +435,26 @@
       border-radius: 50%;
       background: #ffb21b;
     }
+    .learn-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      height: 42px;
+      margin-top: 13px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #2f86f7, #1d6fe7);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      box-shadow: 0 10px 24px rgba(36, 119, 234, .24);
+      text-decoration: none;
+    }
+    .learn-button svg {
+      width: 16px;
+      height: 16px;
+    }
     .edge-dot {
       position: absolute;
       border-radius: 50%;
@@ -489,6 +509,10 @@
         margin-top: 12px;
         font-size: 16px;
       }
+      .learn-button {
+        height: 46px;
+        font-size: 18px;
+      }
       .edge-dot.one { left: 12px; top: 88px; }
       .edge-dot.two { right: 18px; bottom: 38px; }
     }
@@ -503,7 +527,6 @@
 
     <div class="safe-area">
       <section class="visual" aria-hidden="true">
-        <div class="fan-backdrop"></div>
         <div class="card-fan">
           <div class="credit-card bajet-card">
             <div class="brand"><img src="logos/bajet-pay.webp" alt=""></div>
@@ -538,6 +561,12 @@
         <div class="provider-line">
           <span>باجت‌پی</span><i></i><span>کالاپی</span><i></i><span>دیجی‌پی</span><i></i><span>کالانو</span><i></i><span>نوپی</span>
         </div>
+        <a class="learn-button" href="#">
+          <span>آموزش خرید</span>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M19 12H5m6-6-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </section>
     </div>
   </main>
